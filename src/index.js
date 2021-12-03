@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Board } from './components/Board';
+import { observe} from './game-state';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+observe((knightPosition) => ReactDOM.render(
+    <React.StrictMode>
+      <Board knightPosition={knightPosition}/>
+    </React.StrictMode>,
+    document.getElementById('root')
+  )
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

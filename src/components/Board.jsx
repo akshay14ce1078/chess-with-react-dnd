@@ -1,6 +1,14 @@
 import React from 'react';
 import { Knight } from "./Knight";
 import { Square } from "./Square";
+import { canKnightMove, moveKnight} from '../game-state'
+
+
+function handleSquareClick (xPos, yPos){
+  if(canKnightMove(xPos,yPos)){
+    moveKnight(xPos, yPos);
+  }
+}
 
 function renderSquare (squareNumber,[knightX,knightY]) {
   const x = squareNumber % 8;
@@ -11,15 +19,14 @@ function renderSquare (squareNumber,[knightX,knightY]) {
   const isBlack = (x+y) % 2 === 1; 
 
   return (
-    <div key={squareNumber} style={{width:'12.5%', height:'12.5%'}}>
+    <div key={squareNumber} onClick={()=>handleSquareClick(x,y)} style={{width:'12.5%', height:'12.5%'}}>
       <Square black={isBlack}>{piece}</Square>
     </div>
   );
 
 }
 
-export const Board = () => {
-  const knightPosition = [7,6];
+export const Board = ({knightPosition}) => {
   const squares=[];
   for(let i=0 ; i<64 ; i++){
     squares.push(renderSquare(i, knightPosition))
