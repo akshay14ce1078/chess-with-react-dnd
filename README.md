@@ -1,8 +1,8 @@
 # This Project Aim is to use react drop and drop and build one small chess board where we can drag and drop one knight 
 
-## [demo link](https://github.com/akshay14ce1078/chess-with-react-dnd/docs/demo-video.mp4) 
+## [demo link](https://github.com/akshay14ce1078/chess-with-react-dnd/blob/main/docs/demo-video.mp4) 
 
-![D&D Chess Board](https://github.com/akshay14ce1078/chess-with-react-dnd/docs/chess-board.png)
+![D&D Chess Board](https://github.com/akshay14ce1078/chess-with-react-dnd/blob/main/docs/chess-board.png)
 
 
 
